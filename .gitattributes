@@ -1,0 +1,3 @@
+*.bat text eol=crlf
+*.pt binary
+*.pth binary

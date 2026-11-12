@@ -1,0 +1,9 @@
+# Bản PyTorch CPU (nhẹ hơn bản CUDA nhiều, demo không cần GPU)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.13.0
+torchvision==0.29.0
+streamlit==1.65.0
+ultralytics==8.4.177
+pi-heif==1.4.0
+pandas
+pillow

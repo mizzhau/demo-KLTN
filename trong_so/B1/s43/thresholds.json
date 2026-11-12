@@ -1,0 +1,16 @@
+{
+  "model": "B1",
+  "seed": 43,
+  "tau_star": 0.19,
+  "f1_val_at_tau_star": 0.760737,
+  "tau_025": 0.25,
+  "tau_far": 0.05499300000000001,
+  "far_val_at_tau_far": 0.046455,
+  "val_good_total": 409,
+  "val_good_false_alarms_at_tau_far": 19,
+  "input_sha256": {
+    "preds_val_sl.json": "1e683b76f78dbd797e67b81516709907dae7bbd30b835ec7c566445db19acc15",
+    "preds_val_extra_good_sl.json": "8b4fd52527467fdf13fefb6d33d65954dfd160a3d21c57ff2e5887166d04247a"
+  },
+  "created_at": "2026-11-08T20:39:36.942563+00:00"
+}
