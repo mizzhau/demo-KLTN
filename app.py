@@ -69,9 +69,19 @@ m2.metric("Ngưỡng τ", f"{tau:.2f}")
 m3.metric("Số vùng lỗi", len(dets))
 m4.metric("Thời gian xử lý", f"{raw.decode_ms + raw.infer_ms:.0f} ms")
 
-left, right = st.columns([3, 2])
-left.image(annotated, caption=f"Kết quả ({raw.width} × {raw.height} px)", width="stretch")
-with right:
+FIT_HEIGHT = 420  # px; "Vừa khung" keeps the whole image and the side table in view
+
+view = st.segmented_control("Chế độ xem ảnh", ["Vừa khung", "Toàn phần"],
+                            default="Vừa khung", key="image_view")
+full = view == "Toàn phần"
+caption = f"Kết quả ({raw.width} × {raw.height} px) · bấm ⛶ ở góc ảnh để xem toàn màn hình"
+if full:  # image across the whole page, details below
+    st.image(annotated, caption=caption, width="stretch")
+    details = st.container()
+else:  # image fitted to FIT_HEIGHT, details beside it
+    left, details = st.columns([3, 2])
+    left.image(annotated, caption=caption, width=round(FIT_HEIGHT * raw.width / raw.height))
+with details:
     st.subheader("Chi tiết vùng lỗi")
     if dets:
         st.dataframe(pd.DataFrame([{
